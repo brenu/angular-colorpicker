@@ -718,8 +718,6 @@ angular.module('ui.colorpicker', [])
                 $colorpicker.removeClass('position-bottom');
                 $colorpicker.removeClass('position-left');
 
-                debugger;
-
                 if (attrs.position == 'left' || !attrs.position && pageX > colorpickerWidth && winHeight - pageY >= colorpickerHeight) {
                     positionValue = {
                         'top': pageY - 6,
