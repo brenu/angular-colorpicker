@@ -718,19 +718,21 @@ angular.module('ui.colorpicker', [])
                 $colorpicker.removeClass('position-bottom');
                 $colorpicker.removeClass('position-left');
 
-                if (attrs.position == 'left' || attrs.position !== 'right' && pageX > colorpickerWidth && winHeight - pageY >= colorpickerHeight) {
+                debugger;
+
+                if (attrs.position == 'left' || !attrs.position && pageX > colorpickerWidth && winHeight - pageY >= colorpickerHeight) {
                     positionValue = {
                         'top': pageY - 6,
                         'left': pageX - colorpickerWidth + 10
                     };
                     $colorpicker.addClass('position-left');
-                } else if (attrs.position == 'right' || pageX < colorpickerWidth && winHeight - pageY >= colorpickerHeight) {
+                } else if (attrs.position == 'right' || !attrs.position && pageX < colorpickerWidth && winHeight - pageY >= colorpickerHeight) {
                     positionValue = {
                         'top': pageY - 6,
                         'left': pageX + 20
                     };
                     $colorpicker.addClass('position-right');
-                } else if (pageX > colorpickerWidth && winHeight - pageY < colorpickerHeight) {
+                } else if (attrs.position == 'top' || !attrs.position && pageX > colorpickerWidth && winHeight - pageY < colorpickerHeight) {
                     positionValue = {
                         'top': pageY - colorpickerHeight + 35,
                         'left': pageX - colorpickerWidth + 10
